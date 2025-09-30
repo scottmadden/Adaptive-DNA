@@ -1,0 +1,19 @@
+openapi: 3.1.0
+info:
+  title: Adaptive DNA API (Stub)
+  version: 0.0.1
+  description: Minimal OpenAPI so ReDoc/Swagger load green. Replace with your real spec.
+servers: [{ url: https://api.example.com }]
+paths:
+  /health:
+    get:
+      summary: Health check
+      operationId: health
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: { status: { type: string, example: ok } }

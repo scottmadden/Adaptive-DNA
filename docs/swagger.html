@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><title>Adaptive DNA — OpenAPI (Swagger UI)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="icon" href="/favicon.svg"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css" referrerpolicy="no-referrer">
+<style>
+:root{--brand:#6C5CE7;--brand2:#00CEC9;--brandA:#8f83f0;--brandB:#3d3491;--brandText:#fff;color-scheme:light dark}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif}
+.appbar{position:sticky;top:0;z-index:3;background:linear-gradient(135deg,color-mix(in srgb,var(--brand)12%,transparent) 0%,transparent 60%),Canvas;border-bottom:1px solid #ccc4;padding:14px 18px}
+.brand{display:flex;align-items:center;gap:14px;max-width:1200px;margin:0 auto;flex-wrap:wrap}
+.logo{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(120% 120% at 20% 20%,var(--brandA)0%,var(--brand)55%,var(--brandB)100%)}
+.title{display:flex;flex-direction:column;gap:2px}.title h1{margin:0;font-size:18px;font-weight:700}
+#container{height:calc(100% - 48px)}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js" defer referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-standalone-preset.js" defer referrerpolicy="no-referrer"></script>
+</head><body>
+<noscript><div style="padding:12px;border:1px solid #f59e0b88;background:#fef3c7">JavaScript is required for the Swagger UI viewer.</div></noscript>
+<div class="appbar"><div class="brand"><div class="logo" aria-hidden="true"></div><div class="title"><h1>Adaptive DNA</h1><p class="sub">OpenAPI Viewer · Swagger UI</p></div>
+<a id="dev-badge" title="Open Portal Dev" hidden>DEV</a></div></div>
+<div id="container"></div>
+<script>
+function siteRoot(){const{origin,pathname}=location;let p=pathname;if(p.endsWith('/index.html'))p=p.slice(0,-11);const parts=p.split('/').filter(Boolean);return parts.length<=1?origin+'/':origin+'/'+parts[0]+'/'}
+function portalDevUrl(){const viewerName='swagger.html';return siteRoot()+`?dev=1&from=viewer&viewer=${encodeURIComponent(viewerName)}#dev`}
+(function(){const b=document.getElementById('dev-badge');if(!b)return;const u=portalDevUrl();b.href=u;b.target='_blank';b.rel='noopener noreferrer';b.hidden=false;
+window.addEventListener('keydown',e=>{const t=e.target;const typing=['INPUT','TEXTAREA'].includes(t.tagName)||t.isContentEditable;if(typing)return;if((e.key==='D'||e.key==='d')&&e.shiftKey&&(e.ctrlKey||e.metaKey)){e.preventDefault();sessionStorage.setItem('dev-card','1');open(u,'_blank','noopener,noreferrer')}})})();
+function qp(n,fb){const u=new URL(location.href);return u.searchParams.get(n)||fb}
+const DEFAULT_SPEC="/openapi.yaml"; const SPEC_URL=qp("spec",DEFAULT_SPEC);
+addEventListener("load",()=>{SwaggerUIBundle({url:SPEC_URL,dom_id:"#container",presets:[SwaggerUIBundle.presets.apis,SwaggerUIStandalonePreset],layout:"StandaloneLayout",deepLinking:true,docExpansion:"list"});});
+</script></body></html>

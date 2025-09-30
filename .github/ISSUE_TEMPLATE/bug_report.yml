@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a problem with the Adaptive DNA portal or viewers
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect vs what happened?
+      placeholder: Steps to reproduce…
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Affected URL
+      placeholder: https://scottmadden.github.io/Adaptive-DNA/openapi.html
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: Browser, OS, screen size, etc.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Console logs / screenshots
